@@ -8,14 +8,35 @@
 </head>
 <body>
   <script>
+      
+      let computerSelection = computerPlay();
+      let playerSelection = prompt("Rock, paper, or scissors?")
+      playRound(playerSelection, computerSelection);
+      alert(roundResult);
+
       function computerPlay() {
         // Assign the three choices to an array
         const computerChoices = ["rock", "paper", "scissors"];
         // Randomly pick one of the choices with equal chances
-        let computerDecision = computerChoices[Math.floor(Math.random()*computerChoices.length)];
-        console.log(computerDecision);
+        return computerChoices[Math.floor(Math.random()*computerChoices.length)];
+        
       }
 
+      function playRound(playerInput, computerSelect) {
+        // Convert playerInput to lowercase to make it case insensitive
+        let playerSelect = playerInput.toLowerCase();
+        if (playerSelect === computerSelect) {
+            roundResult = `${playerSelect} versus ${computerSelect}! It's a tie!`;
+        } else if ( // If player wins
+            (playerSelect === "rock") && (computerSelect === "scissors") ||
+            (playerSelect === "paper") && (computerSelect === "rock") ||
+            (playerSelect === "scissors") && (computerSelect === "paper")
+        ) {
+            roundResult = `${playerSelect} versus ${computerSelect}! You won!`;
+        } else {
+            roundResult = `${playerSelect} versus ${computerSelect}! You lost!`;
+        }
+      }
       
       
   </script>
