@@ -25,15 +25,18 @@
         // Convert playerInput to lowercase to make it case insensitive
         let playerSelect = playerInput.toLowerCase();
         if (playerSelect === computerSelect) {
-            roundResult = `${playerSelect} versus ${computerSelect}! It's a tie!`;
+            let roundResult = `${playerSelect} versus ${computerSelect}! It's a tie!`;
+            alert(roundResult);
         } else if ( // If player wins
             (playerSelect === "rock") && (computerSelect === "scissors") ||
             (playerSelect === "paper") && (computerSelect === "rock") ||
             (playerSelect === "scissors") && (computerSelect === "paper")
         ) {
-            roundResult = `${playerSelect} versus ${computerSelect}! You won!`;
+            let roundResult = `${playerSelect} versus ${computerSelect}! You won!`;
+            alert(roundResult);
         } else {
-            roundResult = `${playerSelect} versus ${computerSelect}! You lost!`;
+            let roundResult = `${playerSelect} versus ${computerSelect}! You lost!`;
+            alert(roundResult);
         }
       }
       
@@ -44,7 +47,6 @@
             let computerSelection = computerPlay();
             console.log(`Computer chose ${computerSelection}!`);
             playRound(playerSelection, computerSelection);
-            alert(roundResult);
 
 
         }
