@@ -8,11 +8,10 @@
 </head>
 <body>
   <script>
-      
-      let computerSelection = computerPlay();
+      /*let computerSelection = computerPlay();
       let playerSelection = prompt("Rock, paper, or scissors?")
       playRound(playerSelection, computerSelection);
-      alert(roundResult);
+      alert(roundResult); */
 
       function computerPlay() {
         // Assign the three choices to an array
@@ -38,6 +37,19 @@
         }
       }
       
+      function game() {
+        for (let i = 0; i < 5; i++) {
+            let playerSelection = prompt("Rock, paper, or scissors?");
+            console.log(`Player chose ${playerSelection}!`);
+            let computerSelection = computerPlay();
+            console.log(`Computer chose ${computerSelection}!`);
+            playRound(playerSelection, computerSelection);
+            alert(roundResult);
+
+
+        }
+
+      }
       
   </script>
 </body>
