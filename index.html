@@ -12,6 +12,8 @@
       let playerSelection = prompt("Rock, paper, or scissors?")
       playRound(playerSelection, computerSelection);
       alert(roundResult); */
+      let playerScore = 0;
+      let computerScore = 0;
 
       function computerPlay() {
         // Assign the three choices to an array
@@ -34,9 +36,11 @@
         ) {
             let roundResult = `${playerSelect} versus ${computerSelect}! You won!`;
             alert(roundResult);
+            playerScore ++;
         } else {
             let roundResult = `${playerSelect} versus ${computerSelect}! You lost!`;
             alert(roundResult);
+            computerScore ++;
         }
       }
       
@@ -47,8 +51,7 @@
             let computerSelection = computerPlay();
             console.log(`Computer chose ${computerSelection}!`);
             playRound(playerSelection, computerSelection);
-
-
+            console.log(`The score is ${playerScore}-${computerScore}`);
         }
 
       }
