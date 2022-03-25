@@ -12,8 +12,11 @@
       let playerSelection = prompt("Rock, paper, or scissors?")
       playRound(playerSelection, computerSelection);
       alert(roundResult); */
+      alert("The side with the most rounds won in 5 games is declared the winner.")
       let playerScore = 0;
       let computerScore = 0;
+      game();
+      finalAnnouncement();
 
       function computerPlay() {
         // Assign the three choices to an array
@@ -54,6 +57,16 @@
             console.log(`The score is ${playerScore}-${computerScore}`);
         }
 
+      }
+
+      function finalAnnouncement() {
+        if (playerScore === computerScore) {
+          alert(`The final score is ${playerScore}-${computerScore}. It's a draw!`);
+        } else if (playerScore < computerScore) {
+          alert(`The final score is ${playerScore}-${computerScore}. You are a loser!`);
+        } else if (playerScore > computerScore) {
+          alert(`The final score is ${playerScore}-${computerScore}. Winner winner chicken dinner!`);
+        }
       }
       
   </script>
