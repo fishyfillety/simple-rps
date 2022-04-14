@@ -4,67 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js" defer></script>
   <title>Document</title>
 </head>
 <body>
-  <script>
-      alert("The side with the most rounds won in 5 games is declared the winner.")
-      let playerScore = 0;
-      let computerScore = 0;
-      game();
-      finalAnnouncement();
-
-      function computerPlay() {
-        // Assign the three choices to an array
-        const computerChoices = ["rock", "paper", "scissors"];
-        // Randomly pick one of the choices with equal chances
-        return computerChoices[Math.floor(Math.random()*computerChoices.length)];
-        
-      }
-
-      function playRound(playerInput, computerSelect) {
-        // Convert playerInput to lowercase to make it case insensitive
-        let playerSelect = playerInput.toLowerCase();
-        if (playerSelect === computerSelect) {
-            let roundResult = `${playerSelect} versus ${computerSelect}! It's a tie!`;
-            alert(roundResult);
-        } else if ( // If player wins
-            (playerSelect === "rock") && (computerSelect === "scissors") ||
-            (playerSelect === "paper") && (computerSelect === "rock") ||
-            (playerSelect === "scissors") && (computerSelect === "paper")
-        ) {
-            let roundResult = `${playerSelect} versus ${computerSelect}! You won!`;
-            alert(roundResult);
-            playerScore ++;
-        } else {
-            let roundResult = `${playerSelect} versus ${computerSelect}! You lost!`;
-            alert(roundResult);
-            computerScore ++;
-        }
-      }
-      
-      function game() {
-        for (let i = 0; i < 5; i++) {
-            let playerSelection = prompt("Rock, paper, or scissors?");
-            console.log(`Player chose ${playerSelection}!`);
-            let computerSelection = computerPlay();
-            console.log(`Computer chose ${computerSelection}!`);
-            playRound(playerSelection, computerSelection);
-            console.log(`The score is ${playerScore}-${computerScore}`);
-        }
-
-      }
-
-      function finalAnnouncement() {
-        if (playerScore === computerScore) {
-          alert(`The final score is ${playerScore}-${computerScore}. It's a draw!`);
-        } else if (playerScore < computerScore) {
-          alert(`The final score is ${playerScore}-${computerScore}. You are a loser!`);
-        } else if (playerScore > computerScore) {
-          alert(`The final score is ${playerScore}-${computerScore}. Winner winner chicken dinner!`);
-        }
-      }
-      
-  </script>
+  <button id="rock">ROCK</button>
+  <button id="paper">PAPER</button>
+  <button id="scissors">SCISSORS</button>   
 </body>
 </html>
