@@ -36,7 +36,7 @@ function playRound(selection) {
   if (playerSelect === computerSelect) {
       let roundResult = `${playerSelect} versus ${computerSelect}! It's a tie!`;
       console.log(roundResult);
-      roundAnnouncement.textContent = roundResult.charAt(0).toUpperCase() + roundResult.slice(1);
+      roundAnnouncement.textContent = roundResult.charAt(0).toUpperCase() + roundResult.slice(1); // capitalize the first letter in the string
   } else if ( // If player wins
       (playerSelect === "rock") && (computerSelect === "scissors") ||
       (playerSelect === "paper") && (computerSelect === "rock") ||
