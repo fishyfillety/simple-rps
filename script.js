@@ -4,7 +4,9 @@ let computerScore = 0;
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
-const results = document.querySelector('#results');
+const scoreBoard = document.querySelector('#scoreBoard');
+const roundAnnouncement = document.querySelector("#roundAnnouncement");
+
 
 
 rock.addEventListener('click', () => playRound('rock'));
