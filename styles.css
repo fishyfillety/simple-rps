@@ -17,12 +17,20 @@ h1 {
 }
 
 #roundAnnouncement {
-  font-size: 28px;
+  font-size: 35px;
+  margin: 20px;
 }
 
 #scoreBoard {
   display: flex;
   margin: 50px;
+  flex-direction: column;
+}
+
+#scoreTracker {
+  display: flex;
+  font-size: 20px;
+  justify-content: space-around;
 }
 
 button {

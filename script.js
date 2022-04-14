@@ -11,8 +11,7 @@ const roundAnnouncement = document.querySelector("#roundAnnouncement");
 
 rock.addEventListener('click', () => playRound('rock'));
 paper.addEventListener('click', () => playRound('paper'));
-scissors.addEventListener('click', () => playRound('scissors'));   
-  
+scissors.addEventListener('click', () => playRound('scissors'));    
 /*alert("The side with the most rounds won in 5 games is declared the winner.")
 game();
 finalAnnouncement();*/
