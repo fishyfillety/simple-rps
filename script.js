@@ -36,7 +36,7 @@ function playRound(selection) {
   if (playerSelect === computerSelect) {
       let roundResult = `${playerSelect} versus ${computerSelect}! It's a tie!`;
       console.log(roundResult);
-      roundAnnouncement.textContent = roundResult;
+      roundAnnouncement.textContent = roundResult.charAt(0).toUpperCase() + roundResult.slice(1);
   } else if ( // If player wins
       (playerSelect === "rock") && (computerSelect === "scissors") ||
       (playerSelect === "paper") && (computerSelect === "rock") ||
@@ -45,12 +45,12 @@ function playRound(selection) {
       let roundResult = `${playerSelect} versus ${computerSelect}! You won!`;
       console.log(roundResult);
       playerScore ++;
-      roundAnnouncement.textContent = roundResult;
+      roundAnnouncement.textContent = roundResult.charAt(0).toUpperCase() + roundResult.slice(1);
   } else {
       let roundResult = `${playerSelect} versus ${computerSelect}! You lost!`;
       console.log(roundResult);
       computerScore ++;
-      roundAnnouncement.textContent = roundResult;
+      roundAnnouncement.textContent = roundResult.charAt(0).toUpperCase() + roundResult.slice(1);
   }
 }
   
