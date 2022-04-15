@@ -6,6 +6,8 @@ const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 const scoreBoard = document.querySelector('#scoreboard');
 const roundAnnouncement = document.querySelector("#round-announcement");
+const playerPoints = document.querySelector('#player-score');
+const computerPoints = document.querySelector('#computer-score');
 
 
 
@@ -45,11 +47,13 @@ function playRound(selection) {
       console.log(roundResult);
       playerScore ++;
       roundAnnouncement.textContent = roundResult.charAt(0).toUpperCase() + roundResult.slice(1);
+      playerPoints.textContent = `Player: ${playerScore}`;
   } else {
       let roundResult = `${playerSelect} versus ${computerSelect}! You lost!`;
       console.log(roundResult);
       computerScore ++;
       roundAnnouncement.textContent = roundResult.charAt(0).toUpperCase() + roundResult.slice(1);
+      computerPoints.textContent = `Computer: ${computerScore}`;
   }
 }
   
