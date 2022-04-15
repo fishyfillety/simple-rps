@@ -16,18 +16,18 @@ h1 {
   gap: 25px;
 }
 
-#roundAnnouncement {
+#round-announcement {
   font-size: 35px;
   margin: 20px;
 }
 
-#scoreBoard {
+#scoreboard {
   display: flex;
   margin: 50px;
   flex-direction: column;
 }
 
-#scoreTracker {
+#score-tracker {
   display: flex;
   font-size: 20px;
   justify-content: space-around;
