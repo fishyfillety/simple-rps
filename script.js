@@ -12,12 +12,24 @@ const gameEndMessage = document.querySelector('#game-end-message');
 const playAgainButton = document.querySelector('#play-again-button');
 
 playAgainButton.style.display = 'none'; // hide the play again button
-rock.addEventListener('click', () => playRound('rock'));
-paper.addEventListener('click', () => playRound('paper'));
-scissors.addEventListener('click', () => playRound('scissors'));
+rock.addEventListener('click', () => {
+  playRound('rock');
+  rock.classList.add('button-on-click');
+  setTimeout(() => rock.classList.remove('button-on-click'), 100);
+});
+paper.addEventListener('click', () => {
+  playRound('paper');
+  paper.classList.add('button-on-click');
+  setTimeout(() => paper.classList.remove('button-on-click'), 100);
+});
+scissors.addEventListener('click', () => {
+  playRound('scissors');
+  scissors.classList.add('button-on-click');
+  setTimeout(() => scissors.classList.remove('button-on-click'), 100);
+});
 playAgainButton.addEventListener('click', () => playAgain()); 
 
-function computerPlay() {
+function computerPlay() { 
   // Assign the three choices to an array
   const computerChoices = ["rock", "paper", "scissors"];
   // Randomly pick one of the choices with equal chances

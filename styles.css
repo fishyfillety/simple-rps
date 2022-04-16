@@ -60,3 +60,9 @@ button {
   font-size: 30px;
   color:rgb(255, 255, 137);
 }
+
+.button-on-click {
+  color:rgb(255, 255, 137);
+  border-color:rgb(255, 255, 137);
+  transform: scale(1.1);
+}
