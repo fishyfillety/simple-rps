@@ -8,15 +8,14 @@ const scoreBoard = document.querySelector('#scoreboard');
 const roundAnnouncement = document.querySelector("#round-announcement");
 const playerPoints = document.querySelector('#player-score');
 const computerPoints = document.querySelector('#computer-score');
+const gameEndMessage = document.querySelector('#game-end-message');
+const playAgainButton = document.querySelector('#play-again-button');
 
-
+playAgainButton.style.display = 'none'; // hide the play again button
 rock.addEventListener('click', () => playRound('rock'));
 paper.addEventListener('click', () => playRound('paper'));
-scissors.addEventListener('click', () => playRound('scissors'));    
-/*alert("The side with the most rounds won in 5 games is declared the winner.")
-game();
-finalAnnouncement();*/
-
+scissors.addEventListener('click', () => playRound('scissors'));
+playAgainButton.addEventListener('click', () => playAgain()); 
 
 function computerPlay() {
   // Assign the three choices to an array
@@ -58,9 +57,14 @@ function playRound(selection) {
 function gameEndCheck() {
   if (playerScore === 5) {
     disableButtons();
+    gameEndMessage.textContent = 'You came out victorious!';
+    playAgainButton.style.display = 'block'; //unhides the playagain button
   } else if (computerScore === 5) {
     disableButtons();
+    gameEndMessage.textContent = 'You lost to a computer.';
+    playAgainButton.style.display = 'block'; 
   }
+
 }
 
 function disableButtons() {
@@ -75,12 +79,13 @@ function enableButtons() {
   document.getElementById('scissors').disabled = false;
 }
 
-function finalAnnouncement() {
-  if (playerScore === computerScore) {
-    alert(`The final score is ${playerScore}-${computerScore}. It's a draw!`);
-  } else if (playerScore < computerScore) {
-    alert(`The final score is ${playerScore}-${computerScore}. You are a loser!`);
-  } else if (playerScore > computerScore) {
-    alert(`The final score is ${playerScore}-${computerScore}. Winner winner chicken dinner!`);
-  }
+function playAgain() { //reset everything
+  playerScore = 0;
+  computerScore = 0;
+  playerPoints.textContent = 'Player: 0';
+  computerPoints.textContent = 'Computer: 0';
+  roundAnnouncement.textContent = 'First to 5 points wins';
+  playAgainButton.style.display = 'none';
+  enableButtons();
+  gameEndMessage.textContent = '';
 }
