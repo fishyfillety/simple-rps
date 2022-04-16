@@ -10,7 +10,6 @@ const playerPoints = document.querySelector('#player-score');
 const computerPoints = document.querySelector('#computer-score');
 
 
-
 rock.addEventListener('click', () => playRound('rock'));
 paper.addEventListener('click', () => playRound('paper'));
 scissors.addEventListener('click', () => playRound('scissors'));    
@@ -28,10 +27,8 @@ function computerPlay() {
     
 
 function playRound(selection) {
-  let playerSelection = selection;
-  console.log(playerSelection);
+  let playerSelection = selection; 
   let computerSelect = computerPlay();
-  console.log(computerSelect);
   // Convert playerInput to lowercase to make it case insensitive
   let playerSelect = playerSelection.toLowerCase();
   if (playerSelect === computerSelect) {
@@ -55,13 +52,27 @@ function playRound(selection) {
       roundAnnouncement.textContent = roundResult.charAt(0).toUpperCase() + roundResult.slice(1);
       computerPoints.textContent = `Computer: ${computerScore}`;
   }
+  gameEndCheck();
 }
   
-function game() {
-  for (let i = 0; i < 5; i++) {
-    playRound();
-    console.log(`The score is ${playerScore}-${computerScore}`);
+function gameEndCheck() {
+  if (playerScore === 5) {
+    disableButtons();
+  } else if (computerScore === 5) {
+    disableButtons();
   }
+}
+
+function disableButtons() {
+  document.getElementById('rock').disabled = true;
+  document.getElementById('paper').disabled = true;
+  document.getElementById('scissors').disabled = true;
+}
+
+function enableButtons() {
+  document.getElementById('rock').disabled = false;
+  document.getElementById('paper').disabled = false;
+  document.getElementById('scissors').disabled = false;
 }
 
 function finalAnnouncement() {
